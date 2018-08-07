@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: greeter-server
-        image: 115100/poc-client-side-grpc-lb:latest
+        image: 115100/poc-go-client-side-grpc-lb:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

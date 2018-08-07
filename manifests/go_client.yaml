@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: greeter-client-deployment
+  name: greeter-go-client-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: greeter-client
+      app: greeter-go-client
   template:
     metadata:
       labels:
-        app: greeter-client
+        app: greeter-go-client
     spec:
       containers:
       - name: greeter-client
-        image: 115100/poc-client-side-grpc-lb:latest
+        image: 115100/poc-go-client-side-grpc-lb:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

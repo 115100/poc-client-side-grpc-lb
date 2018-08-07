@@ -1,4 +1,4 @@
-GO_IMAGE_TAG=115100/poc-client-side-grpc-lb:latest
+GO_IMAGE_TAG=115100/poc-go-client-side-grpc-lb:latest
 
 default: all
 
