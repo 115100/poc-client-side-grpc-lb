@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  branch = "master"
+  digest = "1:44ddde326221d8ae09c08fbf32f27f87d8a3ac6026604210dff7f6f281a46c71"
+  name = "github.com/115100/poc-client-side-grpc-lb"
+  packages = ["greeterpb"]
+  pruneopts = ""
+  revision = "65b9c3f391e503a5030bfab0593c5b5637c467da"
+
+[[projects]]
   digest = "1:f958a1c137db276e52f0b50efee41a1a389dcdded59a69711f3e872757dab34b"
   name = "github.com/golang/protobuf"
   packages = [
@@ -100,9 +108,11 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/115100/poc-client-side-grpc-lb/greeterpb",
     "github.com/golang/protobuf/proto",
     "golang.org/x/net/context",
     "google.golang.org/grpc",
+    "google.golang.org/grpc/keepalive",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
