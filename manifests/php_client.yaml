@@ -1,20 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: greeter-go-client-deployment
+  name: greeter-php-client-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: greeter-go-client
+      app: greeter-php-client
   template:
     metadata:
       labels:
-        app: greeter-go-client
+        app: greeter-php-client
     spec:
       containers:
       - name: greeter-client
-        image: 115100/poc-go-client-side-grpc-lb:latest
+        image: 115100/poc-php-client-side-grpc-lb:latest
         imagePullPolicy: Always
         command:
-        - "/usr/local/bin/greeter-client"
+        - "php"
+        - "greeter_client.php"

@@ -1,0 +1,7 @@
+{
+  "name": "grpc/poc-php-client-side-grpc-lb",
+  "description": "gRPC example for client-side load balancing",
+  "require": {
+    "grpc/grpc": "^v1.13.0"
+  }
+}
