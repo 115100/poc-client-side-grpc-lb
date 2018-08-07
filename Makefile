@@ -22,6 +22,6 @@ bin/%: go/cmd/%/main.go
 	@mkdir -p $(dir $@)
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags "-s" -a -installsuffix cgo -o $@ $<
 
-GREETERPB_DIR=go/greeterpb
-$(GREETERPB_DIR)/%.pb.go: %.proto
+GO_GREETERPB_DIR=go/greeterpb
+$(GO_GREETERPB_DIR)/%.pb.go: %.proto
 	protoc --go_out=plugins=grpc:go $<
