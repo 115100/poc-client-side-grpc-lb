@@ -17,10 +17,10 @@ proto: go/greeterpb/greeter.pb.go php/Greeterpb/GreeterClient.php php/Greeterpb/
 clean:
 	rm -rf bin/
 
-.PHONY: default docker test all clean
+.PHONY: default docker all proto clean
 
 go/vendor/:
-	cd go/ && dep ensure -v
+	cd go/ && dep ensure -v -vendor-only
 
 bin/%: go/cmd/%/main.go
 	@mkdir -p $(dir $@)
