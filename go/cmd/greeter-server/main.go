@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/115100/poc-client-side-grpc-lb/greeterpb"
+	"github.com/115100/poc-client-side-grpc-lb/go/greeterpb"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/keepalive"
 )

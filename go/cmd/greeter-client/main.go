@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/115100/poc-client-side-grpc-lb/greeterpb"
+	"github.com/115100/poc-client-side-grpc-lb/go/greeterpb"
 	"google.golang.org/grpc"
 )
 
@@ -18,11 +18,7 @@ func main() {
 func run() error {
 	ctx := context.Background()
 
-	// TODO: As of 2018-07-31, due to
-	// https://github.com/grpc/grpc-go/pull/2201, this is bugged if the
-	// dns resolver returns an empty set and will not fetch DNS records
-	// for another 30 minutes (defaultFreq). Until the next tagged release,
-	// you should use master branch.
+	// Requires grpc >= 1.14.0 for proper DNS resolution behaviour.
 	cc, err := grpc.DialContext(
 		ctx,
 		// headless service exposed here; always in fmt dns:///<svc>.<namespace>.svc.cluster.local:<port>
