@@ -4,7 +4,7 @@ PHP_IMAGE_TAG=115100/poc-php-client-side-grpc-lb:latest
 default: all
 
 docker: all
-	docker build --pull -t $(GO_IMAGE_TAG) -f Dockerfile.go .
+	docker build --pull -t $(GO_IMAGE_TAG) -f Dockerfile.golang .
 	docker push $(GO_IMAGE_TAG)
 
 	docker build --pull -t $(PHP_IMAGE_TAG) -f Dockerfile.php php

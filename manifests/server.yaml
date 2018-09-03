@@ -38,3 +38,13 @@ spec:
               fieldPath: status.podIP
         command:
         - "/usr/local/bin/greeter-server"
+        readinessProbe:
+          exec:
+            command:
+            - "/usr/local/bin/grpc-health"
+            - "-s=greeter-server"
+            - "-timeout=3s"
+          failureThreshold: 1
+          initialDelaySeconds: 5
+          timeoutSeconds: 3
+          periodSeconds: 5

@@ -1,0 +1,10 @@
+FROM alpine
+
+RUN set -ex && \
+	wget https://github.com/bsm/grpctools/releases/download/v0.2.2/grpc-health-linux-amd64.zip && \
+	unzip grpc-health-linux-amd64.zip && \
+	mv grpc-health-linux-amd64 /usr/local/bin/grpc-health && \
+	rm -f grpc-health-linux-amd64.zip
+
+ADD bin/greeter-client /usr/local/bin/
+ADD bin/greeter-server /usr/local/bin/
